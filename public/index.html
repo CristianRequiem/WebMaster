@@ -11,26 +11,16 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Fontawesome 5.9.0-->
     <link rel="stylesheet" href="css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
 
-    <style>
-       .bg-blue {
-           background-color: #2f89fc;
-       }
-
-       .margin-custom {
-           margin-top: 10%;
-       }
-
-       .body-color {
-           background-color: #f5f5f5;
-       }
-    </style>
+    <link rel="stylesheet" href="css/custom.css">
 
 </head>
-<body class="body-color">
+<body class="body-custom">
     <header>
         <nav class="navbar navbar-dark bg-blue">
-            <span class="navbar-brand mb-0 h1">WebMaster</span>
+            <span class="navbar-brand mb-0 h1">WEBMASTER</span>
         </nav>
     </header>
 
@@ -38,15 +28,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-4 mx-auto margin-custom card card-body">
-                    <img src="img/logo nav(1).png" alt="logo-wm" class="mx-auto fluid">
+                    <img src="img/logo-2.png" alt="logo-wm" class="mx-auto mb-4">
                     <form action="">                        
                         <div class="form-group">
-                            <input type="text" name="" id="" class="form-control" placeholder="Usuario">
-                            <i class="fas fa-user"></i>
+                            <span class="fas fa-at" style="margin-left:25%;"></span>
+                            <label class="ml-2">Correo electrónico</label>
+                            <input type="text" name="" id="" class="form-control" placeholder="@e-mail">
+                            
                         </div>
                         <div class="form-group">
+                            <span class="fas fa-key" style="margin-left:30%;"></span>
+                            <label class="ml-2">Contraseña</label>
                             <input type="password" name="" id="" class="form-control" placeholder="Contraseña">
-                            <i class="fas fa-key"></i>
                         </div>
                         <button type="submit" class="btn btn-primary form-control">Log In</button>
                     </form>
@@ -54,6 +47,11 @@
             </div>
         </div>
     </main>
+
+    <footer>
+      <p align="center"><strong>WEBMASTER &copy; 2019.</strong> Todos los derechos reservados.
+      </p>
+    </footer>
     
     <!-- Bootstrap 4.3.1 -->
     <script src="js/bootstrap.min.js"></script>
