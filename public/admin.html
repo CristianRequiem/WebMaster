@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>WebMaster - Admin</title>
+    <title>WebMaster - Administrador</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"> 
     <!-- Bootstrap 4.3.1 -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -58,8 +58,8 @@
           <ul class="sidebar-menu">
             <li class="header bg-black"></li>
             <li>
-              <a href="#">
-                <i class="fa fa-plus-square"></i><span> Opción 1</span>
+              <a href="#" onclick="generarArchivos()" role="button">
+                <i class="far fa-file"></i><span> Archivos</span>
               </a>
             </li>
             <li>
@@ -81,15 +81,13 @@
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Titulo del espacio</h3>
+                  <h3 class="box-title" id="titulo">Titulo del espacio</h3>
                 </div>
-                <div class="box-body">
+                <div class="box-body" id="cuerpo">
                   	<div class="row">
-	                  	<div class="col-md-12">
                         <!-- Contenido -->
-                        <h1>Contenido</h1>
+                        
                         <!-- Fin Contenido -->
-                      </div>
                     </div>
                 </div>
               </div>
@@ -114,6 +112,8 @@
     <!-- AdminLTE App -->
     <script src="js/app.min.js"></script>
     <script src="js/all.min.js"></script>
+
+    <script src="js/controlador-admin.js"></script>
     
   </body>
 </html>
