@@ -68,7 +68,7 @@
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="#" onclick="generarEntradas()" role="button">
                 <i class="far fa-clone"></i><span> Entradas</span>
               </a>
             </li> 
@@ -78,12 +78,12 @@
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="#" onclick="generarComentarios()" role="button">
                 <i class="far fa-comments"></i><span> Comentarios</span>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="#" onclick="generarUsuarios()" role="button">
                 <i class="far fa-user"></i><span> Usuarios</span>
               </a>
             </li>
@@ -133,6 +133,150 @@
       <strong>WEBMASTER &copy; 2019.</strong> Todos los derechos reservados.
     </footer>
     <!-- Fin de pie de página -->
+
+    <!-- Pantalla modal Crear Usuario -->
+    <div class="modal fade" id="modalCrearUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Crear usuario</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <img src="img/logo-2.png" alt="logo-2" class="mx-auto">
+            </div>
+            <div class="row">
+              <form class="card card-body m-2">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Nombre">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Apellido">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Usuario">
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" placeholder="Correo">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" placeholder="Contraseña">
+                </div>
+                <div class="form-group">
+                  <select class="form-control">
+                    <option>Seleccione rol</option>
+                    <option>Adminsitrador</option>
+                    <option>Genérico</option>
+                  </select>
+                </div>
+                <div class="row">
+                  <button class="btn btn-primary mx-auto" data-dismiss="modal">Registar Usuario</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pantalla modal Crear Rol -->
+    <div class="modal fade" id="modalCrearRol" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Crear Rol</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <div class="row">
+                <img src="img/logo-2.png" alt="logo-2" class="mx-auto">
+              </div>
+              <div class="row">
+                  <form class="card card-body m-2">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Nombre Rol">
+                    </div>
+                    <div class="form-group">
+                      <textarea class="form-control" placeholder="Descripción" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <select multiple class="form-control">
+                        <option>Página 1</option>
+                        <option>Página 2</option>
+                        <option>Página 3</option>
+                      </select>
+                    </div>
+                    <div class="row">
+                      <button class="btn btn-primary mx-auto" data-dismiss="modal">Crear rol</button>
+                    </div>
+                  </form>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pantalla modal Crear Entrada -->
+    <div class="modal fade" id="modalCrearEntrada" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Crear entrada</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <img src="img/logo-2.png" alt="logo-2" class="mx-auto">
+            </div>
+            <div class="row">
+              <form class="card card-body m-2">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Título de la entrada">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Autor">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Imagen representativa">
+                </div>
+                <div class="form-group">
+                  <select class="form-control">
+                    <option>Seleccionar categoría</option>
+                    <option>Categoría 1</option>
+                    <option>Categoría 2</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <p>¿Activar comentarios?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="comentarios" id="Si" value="option1" checked>
+                    <label class="form-check-label" for="Si">
+                      Si
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="comentarios" id="No" value="option2">
+                    <label class="form-check-label" for="No">
+                      No
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <button class="btn btn-primary mx-auto" data-dismiss="modal">Crear entrada</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- jQuery 2.1.4 -->
     <script src="js/jquery-3.4.1.min.js"></script>
