@@ -22,3 +22,21 @@
     position: absolute;
     bottom: 0;
   }
+
+  #ta-html, #ta-css, #ta-js {
+    width:90%;
+    height: 200px;
+    font-size: 12px;
+    background-color: black;
+    color: white;
+  }
+
+  .btn-custom {
+    color: #f5f5f5;
+    background-color: #30e3ca;
+  }
+
+  .btn-custom:hover{
+    color: #f5f5f5;
+    background-color: #2f89fc;
+  }

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WebMaster - Edición de página principal</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"> 
+    <!-- Bootstrap 4.3.1 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Fontawesome 5.9.0 -->
+	  <link rel="stylesheet" href="css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <!-- Tema -->
+    <link rel="stylesheet" href="css/AdminLTE.min.css">
+    <link rel="stylesheet" href="css/_all-skins.min.css">
+    <!-- Hoja de estilos personalizada -->
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="shortcut icon" href="img/icon.png"> 
+  </head>
+
+  <body class="hold-transition skin-blue sidebar-mini body-custom">
+    <div class="wrapper">
+      <!-- Inicio navbar principal -->
+      <header class="main-header bg-blue">
+        <!-- Logo -->
+        <a href="" class="logo bg-blue">
+          <!-- Logo para dispositivos pequeños -->
+          <span class="logo-mini"><b>W</b>M</span>
+          <!-- Logo para pantallas normales -->
+          <span class="logo-lg"><b>WEBMASTER</b></span>
+        </a>
+        <!-- Navbar -->
+        <nav class="navbar navbar-static-top bg-blue" role="navigation">
+          <!-- Sidebar toggle button -->
+          <a href="#" data-toggle="offcanvas" role="button">
+            <span class="fas fa-bars" color="white"></span>
+          </a>
+          <!-- Navbar menu derecho usuario -->
+          <div class="dropdown mr-4">
+            <a class="btn dropdown-toggle bg-blue" href="#" role="button" id="dropdownMenuLink"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Hola, admin
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#"><span class="fas fa-user-cog"></span> Configurar perfil</a>
+              <a class="dropdown-item" href="index.html"><span class="fas fa-power-off"></span> Cerrar sesión</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- Fin navbar principal-->
+
+      <!-- Sidebar -->
+      <aside class="main-sidebar bg-black">
+        <section class="sidebar">        
+          <!-- Menu del sidebar -->
+          <ul class="sidebar-menu">
+            <li class="header bg-black"></li>
+            <li>
+              <a href="admin.html">
+                <i class="fas fa-backward"></i><span> Volver al menú</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-toggle="modal" data-target="#modalAbout">
+                <i class="fas fa-info-circle"></i><span> Acerca de</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </aside>
+      <!-- Final de sidebar -->
+
+      <!--Contenido-->
+      <!-- Content Wrapper -->
+      <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="box" style="height:490px;">
+                <div class="box-header with-border">
+                  <h3 class="box-title" id="titulo">Edición de la página principal</h3>
+                </div>
+                <div class="box-body" id="cuerpo">
+                    <!-- Contenido -->  
+                    <div class="row">
+                        <div class="col-12 col-lg-3">
+                            <h6 class="text-center">HTML</h6>
+                            <div id="ta-html"></div>
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            <h6 class="text-center">CSS</h6>
+                            <div id="ta-css"></div>
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            <h6 class="text-center">Java Script</h6>
+                            <div id="ta-js"></div>
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            <h6 class="text-center">Opciones</h6>
+                            <div class="card card-body">
+                                <div class="form-group">
+                                    <a href="#" class="btn btn-custom form-control">Guardar progresos</a>
+                                </div>
+                                <div class="form-group">
+                                    <a href="#" class="btn btn-custom form-control">Insertar encabezado</a>
+                                </div>
+                                <div class="form-group">
+                                    <a href="#" class="btn btn-custom form-control">Insertar pie de página</a>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="container">
+                            <h6 align="center">RESULTADO</h6>
+                            <div class="row">
+                                <div class="col-12">
+                                <iframe src="" id="ifr-resultado"
+                                style="width:100%;height:100%;">
+                                    
+                                </iframe>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <!-- Fin Contenido -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!--Fin-Contenido-->
+
+    <!-- Pie de página -->
+    <footer class="main-footer">
+      <strong>WEBMASTER &copy; 2019.</strong> Todos los derechos reservados.
+    </footer>
+    <!-- Fin de pie de página -->
+
+    <!-- Pantalla modal Acerca de -->
+    <div class="modal fade" id="modalAbout" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Acerca de...</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                <img src="img/logo-2.png" alt="logo-2" class="mx-auto">
+                </div>
+                <div class="row">
+                    <p class="mx-auto text-center">
+                    WEBMASTER <br>
+                    Proyecto final de la clase de IS-912 - Sistemas Expertos <br>
+                    Desarrolado por: Cristian Umanzor <br>
+                    Segundo Periodo, 2019
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary mx-auto" data-dismiss="modal">Aceptar</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery 2.1.4 -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <!-- popper dependencia BT -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="js/app.min.js"></script>
+    <script src="js/all.min.js"></script>
+
+    <!-- Script para editor ACE-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.1/ace.js"
+    type="text/javascript" charset="utf-8"></script>
+
+    <!-- Script para el highlight text -->
+    <script>
+        function update(){
+            var res = document.getElementById('ifr-resultado').contentWindow.document;
+            res.open();
+            //para html
+            res.write(eh.getValue());
+            //para css
+            res.write('<style>' + ec.getValue() + '</style>');
+            //para js
+    
+            res.close();
+        }
+    
+        function setEditor(){
+            //para ventana de html
+            window.eh = ace.edit("ta-html");
+            eh.setTheme("ace/theme/monokai");
+            eh.session.setMode("ace/mode/html");
+    
+            //para ventana de css
+            window.ec = ace.edit("ta-css");
+            ec.setTheme("ace/theme/monokai");
+            ec.session.setMode("ace/mode/css");
+    
+            //para ventana de js
+            window.ej = ace.edit("ta-js");
+            ej.setTheme("ace/theme/monokai");
+            ej.session.setMode("ace/mode/javascript");
+    
+            //actualizar iframe para ver el resultado
+            eh.getSession().on('change', function(){
+            update();
+            });
+    
+            ec.getSession().on('change', function(){
+            update();
+            });
+    
+            /*ej.getSession().on('change', function(){
+            update();
+            });*/
+        }
+    
+        setEditor();
+        update();
+    </script>
+    
+  </body>
+</html>
