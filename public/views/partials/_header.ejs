@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WebMaster</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"> 
+    <!-- Bootstrap 4.3.1 -->
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <!-- Fontawesome 5.9.0 -->
+	  <link rel="stylesheet" href="../../css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <!-- Tema -->
+    <link rel="stylesheet" href="../../css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../../css/_all-skins.min.css">
+    <!-- Hoja de estilos personalizada -->
+    <link rel="stylesheet" href="../../css/custom.css">
+    <link rel="shortcut icon" href="../../img/icon.png"> 
+  </head>
+
+  <body class="hold-transition skin-blue sidebar-mini body-custom">
+    <div class="wrapper">
+      <!-- Inicio navbar principal -->
+      <header class="main-header bg-blue">
+        <!-- Logo -->
+        <a href="" class="logo bg-blue">
+          <!-- Logo para dispositivos pequeños -->
+          <span class="logo-mini"><b>W</b>M</span>
+          <!-- Logo para pantallas normales -->
+          <span class="logo-lg"><b>WEBMASTER</b></span>
+        </a>
+        <!-- Navbar -->
+        <nav class="navbar navbar-static-top bg-blue" role="navigation">
+          <!-- Sidebar toggle button -->
+          <a href="#" data-toggle="offcanvas" role="button">
+            <span class="fas fa-bars" color="white"></span>
+          </a>
+          <!-- Navbar menu derecho usuario -->
+          <div class="dropdown mr-4">
+            <a class="btn dropdown-toggle bg-blue" href="#" role="button" id="dropdownMenuLink"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Hola, admin
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="/edit-profile/"><span class="fas fa-user-cog"></span> Configurar perfil</a>
+              <a class="dropdown-item" href="/"><span class="fas fa-power-off"></span> Cerrar sesión</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- Fin navbar principal-->
+
+<!-- Sidebar -->
+<aside class="main-sidebar bg-black">
+    <section class="sidebar">        
+        <!-- Menu del sidebar -->
+        <ul class="sidebar-menu">
+        <li class="header bg-black"></li>
+        <li>
+            <a href="/edit-main-page/">
+            <i class="fas fa-home"></i><span> Página principal</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" onclick="generarSeccionPaginas()" role="button">
+            <i class="far fa-file-code"></i><span> Páginas</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" onclick="generarSeccionEntradas()" role="button">
+            <i class="far fa-clone"></i><span> Entradas</span>
+            </a>
+        </li> 
+        <li>
+            <a href="#" onclick="generarSeccionArchivos()" role="button">
+            <i class="far fa-file"></i><span> Archivos</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" onclick="generarSeccionComentarios()" role="button">
+            <i class="far fa-comments"></i><span> Comentarios</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" onclick="generarSeccionUsuarios()" role="button">
+            <i class="far fa-user"></i><span> Usuarios</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" onclick="generarSeccionTemas()" role="button">
+            <i class="fas fa-layer-group"></i><span> Temas</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" data-toggle="modal" data-target="#modalAbout">
+            <i class="fas fa-info-circle"></i><span> Acerca de</span>
+            </a>
+        </li>
+        <li>
+            <a href="/edit-profile/">
+            <i class="fas fa-user-cog"></i><span> Configurar perfil</span>
+            </a>
+        </li>
+        <li>
+            <a href="/">
+            <i class="fas fa-power-off"></i><span> Cerrar sesión</span>
+            </a>
+        </li> 
+        </ul>
+    </section>
+</aside>
+<!-- Final de sidebar -->
