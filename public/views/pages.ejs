@@ -1,0 +1,104 @@
+<% include partials/_header %>
+
+    <!--Contenido-->
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+            <div class="box" style="height:490px;">
+                <div class="box-header with-border">
+                <h3 class="box-title" id="titulo">Páginas</h3>
+                </div>
+                <div class="box-body" id="cuerpo">
+                    <div class="row mt-2">
+                        <div class="mx-auto">
+                            <a href="#" class="btn btn-custom" data-toggle="modal" data-target="#modalCrearPagina">Crear página</a>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12 col-md-6 mx-auto">
+                            <table class="table table-borderless table-hover">
+                                <thead>
+                                    <td><b>Nombre de página</b></td>
+                                    <td><b>Ver</b></td>
+                                    <td><b>Editar</b></td>
+                                    <td><b>Eliminar</b></td>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Página 1</td>
+                                        <td><a href="#" class="btn btn-info" title="Ver" style="font-size:10px;"><span class="fas fa-eye"></span></a></td>
+                                        <td><a href="#" class="btn btn-success" title="Editar" style="font-size:10px;"><span class="fas fa-edit"></span></a></td>
+                                        <td><a href="#" class="btn btn-danger" title="Eliminar" style="font-size:10px;"><span class="fas fa-trash-alt"></span></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+    </div>
+    <!--Fin-Contenido-->
+
+    <!-- Pantalla modal Crear Página -->
+    <div class="modal fade" id="modalCrearPagina" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Crear Página</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                <img src="../img/logo-2.png" alt="logo-2" class="mx-auto">
+                </div>
+                <div class="row">
+                <form class="card card-body m-2">
+                    <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Título de la página">
+                    </div>
+                    <div class="form-group">
+                    <textarea class="form-control" placeholder="Descripción" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                    <input type="text" class="form-control" placeholder="URL">
+                    </div>
+                    <div class="form-group">
+                    <select class="form-control">
+                        <option>Activada</option>
+                        <option>No activada</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                    <p>¿Activar comentarios?</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="tipo_pag" id="" value="static_page" checked>
+                        <label class="form-check-label" for="Si">
+                        Página estática
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="tipo_pag" id="" value="post_page">
+                        <label class="form-check-label" for="No">
+                        Página de entradas
+                        </label>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <button class="btn btn-custom mx-auto" data-dismiss="modal">Crear página</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+<% include partials/_footer %>

@@ -14,13 +14,43 @@ router.get('/admin/', function(req, res){
 })
 
 //Configuración de perfil
-router.get('/edit-profile/', function(req, res) {
+router.get('/admin/edit-profile/', function(req, res) {
     res.render('edit-profile')
 })
 
 //Editar página principal
-router.get('/edit-main-page/', function(req, res){
+router.get('/admin/edit-main-page/', function(req, res){
     res.render('edit-main-page')
+})
+
+//Listar archivos
+router.get('/admin/files/', function(req, res){
+    res.render('files')
+})
+
+//Listar Comentarios
+router.get('/admin/comentaries/', function(req, res){
+    res.render('comentaries')
+})
+
+//Listar páginas
+router.get('/admin/pages/', function(req, res){
+    res.render('pages')
+})
+
+//Listar entradas
+router.get('/admin/posts/', function(req, res){
+    res.render('posts')
+})
+
+//Listar temas
+router.get('/admin/templates/', function(req, res){
+    res.render('templates')
+})
+
+//Listar usuarios
+router.get('/admin/users/', function(req, res){
+    res.render('users')
 })
 
 module.exports = router;
