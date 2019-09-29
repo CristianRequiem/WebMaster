@@ -18,13 +18,13 @@ mongoose.connect(url)
     .then(db => console.log('Conectado a la base de datos de WebMaster'))
     .catch(err => console.log(err));
 
-// Cargar rutas
-// const indexRoutes = require('./src/routes/router');
-
 // Configuraciones
 app.set('views', path.join(__dirname, './public/views'));
 app.set('view engine', 'ejs');
 app.set('port', process.env.PORT || 3333);
+
+// Importar configuaricón de passport
+require('./src/config/passport')(passport);
 
 // Middlewares
 app.use(morgan('dev'));
@@ -43,8 +43,14 @@ app.use(flash());
 app.use(express.static('public'));
 
 // Rutas
-// app.use('/', indexRoutes);
-require('./src/routes/router')(app, passport);
+require('./src/routes/users-router')(app, passport);
+require('./src/routes/comentaries-router')(app, passport);
+require('./src/routes/files-router')(app, passport);
+require('./src/routes/pages-router')(app, passport);
+require('./src/routes/posts-router')(app, passport);
+require('./src/routes/roles-router')(app, passport);
+require('./src/routes/shortcuts-router')(app, passport);
+require('./src/routes/templates-router')(app, passport);
 
 // Levantar el servidor
 app.listen(app.get('port'), ()=> {
