@@ -11,46 +11,46 @@
               <div class="box-header with-border">
                 <h3 class="box-title" id="titulo">Editar perfil</h3>
               </div>
+              <form action="/admin/<%=user._id%>/update" method="POST">
               <div class="box-body" id="cuerpo">
                   <div class="row ml-5 mr-5">
                       <!-- Contenido -->
-                      <!--<form>-->
                       <div class="col-12 col-md-6">
                               <div class="form-group">
-                                  <label for="exampleInputEmail1">Nombre</label>
-                                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre" value="<%=user.local.first_name%>">
+                                  <label for="first_name">Nombre</label>
+                                  <input type="text" class="form-control" name="first_name" placeholder="Nombre" value="<%=user.local.first_name%>">
                               </div>
                               <div class="form-group">
-                                  <label for="exampleInputPassword1">Apellido</label>
-                                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Apellido" value="<%=user.local.last_name%>">
+                                  <label for="last_name">Apellido</label>
+                                  <input type="text" class="form-control" name="last_name" placeholder="Apellido" value="<%=user.local.last_name%>">
                               </div>
                               <div class="form-group">
-                                  <label for="exampleInputPassword1">Nombre de usuario</label>
-                                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Usuario" value="<%=user.local.user_name%>">
+                                  <label for="user_name">Nombre de usuario</label>
+                                  <input type="text" class="form-control" name="user_name" placeholder="Usuario" value="<%=user.local.user_name%>">
                               </div>
                       </div>
                       <div class="col-12 col-md-6">
                           <div class="form-group">
-                              <label for="exampleInputPassword1">Correo electrónico</label>
-                              <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Correo electrónico" value="<%=user.local.email%>">
+                              <label for="email">Correo electrónico</label>
+                              <input type="email" class="form-control" name="email" placeholder="Correo electrónico" value="<%=user.local.email%>">
                           </div>
                           <div class="form-group">
-                              <label for="exampleInputPassword1">Contraseña</label>
-                              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" value="<%=user.local.password%>">
+                              <label for="password">Contraseña</label>
+                              <input type="password" class="form-control" name="password" placeholder="Contraseña" value="<%=user.local.password%>">
                           </div>
                           <div class="form-group">
-                              <label for="exampleInputPassword1">Tipo de usuario</label>
-                              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Tipo de usuario" disabled value="<%=user.local.user_type%>">
+                              <label for="user_type">Tipo de usuario</label>
+                              <input type="text" class="form-control" name="user_type" placeholder="Tipo de usuario" disabled value="<%=user.local.user_type%>">
                           </div>
                       </div>
                       <div class="row mx-auto mt-4">
-                          <button type="submit" class="btn btn-custom m-4">Guardar</button>
-                          <a href="/admin/" class="btn btn-danger m-4">Cancelar</a>
+                          <button type="submit" class="btn btn-custom m-4">Actualizar</button>
+                          <a href="/admin" class="btn btn-danger m-4">Cancelar</a>
                       </div>
-                      <!--</form>-->
                       <!-- Fin Contenido -->
                   </div>
               </div>
+              </form>
             </div>
           </div>
         </div>

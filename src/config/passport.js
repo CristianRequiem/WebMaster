@@ -30,7 +30,7 @@ module.exports = function(passport){
                 newUser.local.user_name = req.body.user_name;
                 newUser.local.first_name = req.body.first_name;
                 newUser.local.last_name = req.body.last_name;
-                newUser.local.user_type = 'generico';
+                newUser.local.user_type = 'admin';
                 newUser.save(function(err){
                     if (err) {throw err};
                     return done(null, newUser);

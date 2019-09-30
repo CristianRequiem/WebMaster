@@ -48,26 +48,49 @@ module.exports = (app, passport) => {
             user: req.user
         });
     });
+
+    // Actualizar perfil
+    app.post('/admin/:id/update', IsLoggedIn, async (req, res) => {
+        let {id} = req.params;
+        await User.update({_id:id}, {
+            "local.user_name": req.body.user_name,
+            "local.first_name": req.body.first_name,
+            "local.last_name": req.body.last_name,
+            "local.email": req.body.email,
+            "local.password": req.body.password
+        });
+        res.redirect('/admin');
+    });
     
     // Editar página principal
     app.get('/admin/edit-main-page', IsLoggedIn, function(req, res){
-        res.render('edit-main-page',{
+        res.render('edit-main-page', {
             user: req.user
         });
     });
     
     // Listar usuarios
-    app.get('/admin/users', IsLoggedIn, function(req, res){
+    app.get('/admin/users', IsLoggedIn, async (req, res) => {
+        let users = await User.find();
+        console.log(users);
         res.render('users', {
-            user: req.user
+            user: req.user,
+            users
         });
     });
 
     // Crear usuario
-    app.post('/admin/users/create', async(req, res) => {
-        const user = new User(req.body);
+    app.post('/admin/users/create', IsLoggedIn, async(req, res) => {
+        const user = new User({
+            "local.user_name": req.body.user_name,
+            "local.first_name": req.body.first_name,
+            "local.last_name": req.body.last_name,
+            "local.email": req.body.email,
+            "local.password": req.body.password,
+            "local.user_type": req.body.user_type
+        });
         await user.save();
-        //res.redirect('/');
+        res.redirect('/admin/users');
     });
 
     // Funcion para comprobar si el usuario ha iniciado sesion
