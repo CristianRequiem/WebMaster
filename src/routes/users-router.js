@@ -51,7 +51,8 @@ module.exports = (app, passport) => {
 
     // Actualizar perfil
     app.post('/admin/:id/update', IsLoggedIn, async (req, res) => {
-        let {id} = req.params;
+        const {id} = req.params;
+        //const password = User.generateHash(req.body.password);
         await User.update({_id:id}, {
             "local.user_name": req.body.user_name,
             "local.first_name": req.body.first_name,
@@ -89,8 +90,29 @@ module.exports = (app, passport) => {
             "local.password": req.body.password,
             "local.user_type": req.body.user_type
         });
-        await user.save();
-        res.redirect('/admin/users');
+        try {
+            let newUser = await user.save();
+            res.send(newUser);
+            res.end();
+        }
+        catch(err){
+            res.send(err);
+            res.end();
+        }
+    });
+
+    // Eliminar usuario
+    app.delete('/admin/users/:id/delete', IsLoggedIn, (req, res) =>{
+        const { id } = req.params;
+        User.remove({_id: id})
+        .then((result)=>{
+            res.send(result);
+            res.end();
+        })
+        .catch((error)=>{
+            res.send(error);
+            res.end();
+        });
     });
 
     // Funcion para comprobar si el usuario ha iniciado sesion

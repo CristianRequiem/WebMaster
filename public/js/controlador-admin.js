@@ -239,3 +239,62 @@ function generarSeccionTemas(){
     </div> 
     `;
 }
+
+// Función para crear usuario
+function crearUsuario(){
+    let persona = {
+        first_name: document.getElementById('first_name').value,
+        last_name: document.getElementById('last_name').value,
+        user_name: document.getElementById('user_name').value,
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value,
+        user_type: document.getElementById('user_type').value
+    };
+    let parametros = `first_name=${persona.first_name}&last_name=${persona.last_name}&user_name=${persona.user_name}&email=${persona.email}&password="${persona.password}&user_type=${persona.user_type}`;
+    $.ajax({
+        url: '/admin/users/create',
+        method: 'POST',
+        data: parametros,
+        dataType: 'json',
+        success: (res)=>{
+            if(res._id!=undefined)
+                anexarFilaUsuario(res);
+        },
+        error: (error)=>{
+            console.error(error);
+        }
+    });
+}
+
+// Anexar fila a la tabla de usuarios
+function anexarFilaUsuario(res){
+    document.getElementById('cuerpo-tabla').innerHTML +=
+    `
+    <tr id="${res._id}">
+        <td>${res.user_name}</td>
+        <td>${res.first_name}</td>
+        <td>${res.last_name}</td>
+        <td>${res.email}</td>
+        <td>${res.user_type}</td>
+        <td><button onclick="eliminarUsuario(${res._id})" class="btn btn-danger"
+            title="Eliminar" style="font-size:7px;"><span class="fas fa-trash-alt"></span></button>
+        </td>
+    </tr>
+    `
+}
+
+// Función para eliminar ususario
+function eliminarUsuario(id){
+    $.ajax({
+        url: `/admin/users/${id}/delete`,
+        method: 'DELETE',
+        dataType: 'json',
+        success: (res)=>{
+            if(res.ok == 1)
+                $(`#${id}`).remove();
+        },
+        error: (err)=>{
+            console.error(err);
+        }
+    });
+}
