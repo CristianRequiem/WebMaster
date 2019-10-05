@@ -63,13 +63,6 @@ module.exports = (app, passport) => {
         res.redirect('/admin');
     });
     
-    // Editar página principal
-    app.get('/admin/edit-main-page', IsLoggedIn, function(req, res){
-        res.render('edit-main-page', {
-            user: req.user
-        });
-    });
-    
     // Listar usuarios
     app.get('/admin/users', IsLoggedIn, async (req, res) => {
         let users = await User.find();
@@ -90,8 +83,8 @@ module.exports = (app, passport) => {
             "local.password": req.body.password,
             "local.user_type": req.body.user_type
         });
+        let newUser = await user.save();
         try {
-            let newUser = await user.save();
             res.send(newUser);
             res.end();
         }

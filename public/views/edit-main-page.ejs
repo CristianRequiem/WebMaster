@@ -7,7 +7,7 @@
         <section class="content">
           <div class="row">
             <div class="col-md-12">
-              <div class="box" style="height:490px;">
+              <div class="box">
                 <div class="box-header with-border">
                   <h3 class="box-title" id="titulo">Edición de la página principal</h3>
                 </div>
@@ -28,8 +28,64 @@
                         </div>
                         <div class="col-12 col-lg-3">
                             <h6 class="text-center">Opciones</h6>
-                            <div class="card card-body">
-                                <div class="form-group">
+                            <div class="card card-body mr-2 pl-1" style="padding-top:5px; padding-bottom:5px;">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <button class="btn btn-custom custom-size" title="Guardar"><span class="fas fa-save"></span></button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-custom custom-size" title="Regresar al menú"><span class="fas fa-sign-out-alt"></span></button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-custom custom-size" title="Encabezado"><span class="fas fa-h-square"></span></button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-custom custom-size" title="Pie de página"><span class="fas fa-shoe-prints"></span></button>
+                                    </div>
+                                </div>
+                                <div class="row mt-1">
+                                    <div class="col-3">
+                                        <button class="btn btn-custom custom-size" onclick="agregarTitulo()" title="Título"><span class="fas fa-heading"></span></button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-custom custom-size" title="Párrafo"><span class="fas fa-align-justify"></span></button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-custom custom-size" title="Negrita"><span class="fas fa-bold"></span></button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-custom custom-size" title="Subrayado"><span class="fas fa-underline"></span></button>
+                                    </div>
+                                </div>
+                                <div class="row mt-1">
+                                    <div class="col-3">
+                                        <button class="btn btn-custom custom-size" title="Cursiva"><span class="fas fa-italic"></span></button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-custom custom-size" title="Lista"><span class="fas fa-list-ul"></span></button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-custom custom-size" title="Lista ordenada"><span class="fas fa-list-ol"></span></button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-custom custom-size" title="Imagen"><span class="fas fa-image"></span></button>
+                                    </div>
+                                </div>
+                                <div class="row mt-1">
+                                    <div class="col-3">
+                                        <button class="btn btn-custom custom-size" title="Tabla"><span class="fas fa-table"></span></button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-custom custom-size" title="Enlace"><span class="fas fa-link"></span></button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-custom custom-size" title="Divisor"><span class="fas fa-grip-lines"></span></button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-custom custom-size" title="Comentario"><span class="fas fa-comment"></span></button>
+                                    </div>
+                                </div>
+                                <!--<div class="form-group">
                                     <a href="#" class="btn btn-custom form-control">Guardar progresos</a>
                                 </div>
                                 <div class="form-group">
@@ -37,7 +93,7 @@
                                 </div>
                                 <div class="form-group">
                                     <a href="#" class="btn btn-custom form-control">Insertar pie de página</a>
-                                </div>  
+                                </div>-->  
                             </div>
                         </div>
                         <div class="container">
@@ -64,6 +120,9 @@
     <!-- Script para editor ACE-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.1/ace.js"
     type="text/javascript" charset="utf-8"></script>
+
+    <!-- Opciones WYSIWYG -->
+    <script src="../js/wysiwyg-options.js"></script>
 
     <!-- Script para el highlight text -->
     <script>

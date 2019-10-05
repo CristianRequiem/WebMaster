@@ -7,4 +7,4 @@ const rolSchema = new schema({
     pages : Array
 });
 
-module.exports = mongoose.model('rols', rolSchema);
+module.exports = mongoose.model('roles', rolSchema);

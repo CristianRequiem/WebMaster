@@ -37,16 +37,50 @@ module.exports = (app, passport) => {
         }
     });
 
-    // Función para eliminar archivo
-    app.get('/admin/files/:id/delete', IsLoggedIn, async function(req, res){
+    // Función para obtener archivo
+    app.get('/admin/files/:id/get', IsLoggedIn, function(req, res){
         let { id } = req.params;
-        try {
-            await File.remove({_id: id});
-            res.redirect('/admin/files');
-        }
-        catch {
-            console.error("Error al eliminar el archivo");
-        }
+        File.find({_id: id})
+        .then((data)=>{
+            res.send(data[0]);
+            res.end();
+        })
+        .catch((error)=>{
+            res.send(error);
+            res.end();
+        })
+    })
+
+    // Función para actualizar archivo
+    app.put('/admin/files/:id/update', IsLoggedIn, function(req, res){
+        let { id } = req.params;
+        File.update({_id: id}, {
+            name: req.body.name,
+            description: req.body.description
+        })
+        .then((result)=>{
+            res.send(result);
+            res.end();
+        })
+        .catch((error)=>{
+            res.send(error);
+            res.end();
+        })
+    })
+
+    // Función para eliminar archivo
+    app.delete('/admin/files/:id/delete', IsLoggedIn, function(req, res){
+        let { id } = req.params;
+        File.remove({_id: id})
+        .then((result)=>{
+            res.send(result);
+            res.end();
+        })
+        .catch((error)=>{
+            res.send(error);
+            res.end();
+        });
+        
     });
 
     // Funcion para comprobar si el usuario ha iniciado sesion
