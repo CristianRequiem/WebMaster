@@ -1,10 +1,15 @@
 module.exports = (app, passport) => {
     const Post = require('../models/posts');
+    const User = require('../models/users');
+    const Category = require('../models/categories');
+    const mongoose = require('mongoose');
 
     // Listar entradas
-    app.get('/admin/posts', IsLoggedIn, function(req, res){
+    app.get('/admin/posts', IsLoggedIn, async function(req, res){
+        let posts = await Post.find();
         res.render('posts', {
-            user: req.user
+            user: req.user,
+            posts
         });
     });
 

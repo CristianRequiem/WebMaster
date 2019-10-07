@@ -7,11 +7,7 @@ function agregarPiePagina(){
 }
 
 function agregarTitulo(){
-    document.getElementById('ta-html').innerHTML +=
-    `
-    <h1>Escribe tu título aquí</h1>
-    `
-    //$('#ta-html').text('<h1>Escribe tu título aquí</h1>');
+    window.alert("<h1>Copia y escribe entre estas etiquetas</h1>")
 }
 
 function agregarParrafo(){

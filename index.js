@@ -40,7 +40,7 @@ app.use(passport.session());
 app.use(flash());
 
 // Configurar carpeta como pública
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 // Rutas
 require('./src/routes/users-router')(app, passport);

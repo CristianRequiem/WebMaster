@@ -9,7 +9,7 @@
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title" id="titulo">Edición de la página principal</h3>
+                  <h3 class="box-title" id="titulo">Edición de la página <%=page.title%></h3>
                 </div>
                 <div class="box-body" id="cuerpo">
                     <!-- Contenido -->  
@@ -17,24 +17,24 @@
                         <div class="col-12 col-lg-3">
                             <h6 class="text-center">HTML</h6>
                             <!--<div id="ta-html"></div>-->
-                            <textarea name="" id="tx-html" cols="30" rows="10"><%=main_page.html%></textarea>
+                            <textarea name="" id="tx-html" cols="30" rows="10"><%=page.html%></textarea>
                         </div>
                         <div class="col-12 col-lg-3">
                             <h6 class="text-center">CSS</h6>
                             <!--<div id="ta-css"></div>-->
-                            <textarea name="" id="tx-css" cols="30" rows="10"><%=main_page.css%></textarea>
+                            <textarea name="" id="tx-css" cols="30" rows="10"><%=page.css%></textarea>
                         </div>
                         <div class="col-12 col-lg-3">
                             <h6 class="text-center">Java Script</h6>
                             <!--<div id="ta-js"></div>-->
-                            <textarea name="" id="tx-js" cols="30" rows="10"><%=main_page.js%></textarea>
+                            <textarea name="" id="tx-js" cols="30" rows="10"><%=page.js%></textarea>
                         </div>
                         <div class="col-12 col-lg-3">
                             <h6 class="text-center">Opciones</h6>
                             <div class="card card-body mr-2 pl-1" style="padding-top:5px; padding-bottom:5px;">
                                 <div class="row">
                                     <div class="col-3">
-                                        <button class="btn btn-custom custom-size" onclick="guardarPagina('<%=main_page._id%>')" title="Guardar"><span class="fas fa-save"></span></button>
+                                        <button class="btn btn-custom custom-size" onclick="guardarPagina('<%=page._id%>')" title="Guardar"><span class="fas fa-save"></span></button>
                                     </div>
                                     <div class="col-3">
                                         <button class="btn btn-custom custom-size" title="Regresar al menú"><span class="fas fa-sign-out-alt"></span></button>
@@ -88,15 +88,6 @@
                                         <button class="btn btn-custom custom-size" title="Comentario"><span class="fas fa-comment"></span></button>
                                     </div>
                                 </div>
-                                <!--<div class="form-group">
-                                    <a href="#" class="btn btn-custom form-control">Guardar progresos</a>
-                                </div>
-                                <div class="form-group">
-                                    <a href="#" class="btn btn-custom form-control">Insertar encabezado</a>
-                                </div>
-                                <div class="form-group">
-                                    <a href="#" class="btn btn-custom form-control">Insertar pie de página</a>
-                                </div>-->  
                             </div>
                         </div>
                         <div class="container">

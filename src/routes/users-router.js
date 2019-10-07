@@ -1,5 +1,6 @@
 module.exports = (app, passport) => {
     const User = require('../models/users');
+    const bcrypt = require('bcrypt-nodejs');
 
     // Login
     app.get('', function(req, res){
@@ -51,14 +52,14 @@ module.exports = (app, passport) => {
 
     // Actualizar perfil
     app.post('/admin/:id/update', IsLoggedIn, async (req, res) => {
-        const {id} = req.params;
-        //const password = User.generateHash(req.body.password);
+        let {id} = req.params;
+        let password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(8), null);
         await User.update({_id:id}, {
             "local.user_name": req.body.user_name,
             "local.first_name": req.body.first_name,
             "local.last_name": req.body.last_name,
             "local.email": req.body.email,
-            "local.password": req.body.password
+            "local.password": password
         });
         res.redirect('/admin');
     });
@@ -75,12 +76,13 @@ module.exports = (app, passport) => {
 
     // Crear usuario
     app.post('/admin/users/create', IsLoggedIn, async(req, res) => {
-        const user = new User({
+        let password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(8), null);
+        let user = new User({
             "local.user_name": req.body.user_name,
             "local.first_name": req.body.first_name,
             "local.last_name": req.body.last_name,
             "local.email": req.body.email,
-            "local.password": req.body.password,
+            "local.password": password,
             "local.user_type": req.body.user_type
         });
         let newUser = await user.save();

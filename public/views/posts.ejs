@@ -12,14 +12,9 @@
                 <h3 class="box-title" id="titulo">Entradas</h3>
             </div>
             <div class="box-body" id="cuerpo">
-                <div class="row mt-2">
-                    <div class="mx-auto">
-                        <a href="#" class="btn btn-custom" data-toggle="modal" data-target="#modalCrearEntrada">Crear entrada</a>
-                    </div>
-                </div>
-                <div class="row mt-2">
-                    <div class="col-12 ml-4">
-                        <table class="table table-borderless table-hover">
+                <div class="row mt-1">
+                    <div class="col-12 col-xl-8">
+                        <table class="table table-borderless table-hover table-sm" id="posts-table">
                             <thead>
                                 <td><b>Título</b></td>
                                 <td><b>Autor</b></td>
@@ -28,7 +23,15 @@
                                 <td><b>Acciones</b></td>
                             </thead>
                             <tbody>
-                                <tr>
+                                <% for(var i = 0; i < posts.length; i++) { %>
+                                    <tr id="posts[i]._id">
+                                        <td><%=posts[i].title%></td>
+                                        <td><%=posts[i].author.user_name%></td>
+                                        <td><%=posts[i].date%></td>
+                                        <td><%=posts[i].category.name%></td>
+                                    </tr>
+                                <% } %>
+                                <!--<tr>
                                     <td>Entrada 1</td>
                                     <td>John Doe</td>
                                     <td>12/12/12</td>
@@ -38,9 +41,12 @@
                                         <a href="#" class="btn btn-success mx-2" title="Editar" style="font-size:10px;"><span class="fas fa-edit"></span></a>
                                         <a href="#" class="btn btn-danger mx-2" title="Eliminar" style="font-size:10px;"><span class="fas fa-trash-alt"></span></a>
                                     </td>
-                                </tr>
+                                </tr>-->
                             </tbody>
                         </table>
+                    </div>
+                    <div class="col-12 col-xl-4 text-center">
+                        <a href="#" class="btn btn-custom" data-toggle="modal" data-target="#modalCrearEntrada">Crear entrada</a>
                     </div>
                 </div>
             </div>
@@ -68,38 +74,29 @@
                 <div class="row">
                 <form class="card card-body m-2">
                     <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Título de la entrada">
+                    <input type="text" class="form-control" placeholder="Título de la entrada" id="title">
                     </div>
                     <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Autor">
+                    <input type="text" class="form-control" placeholder="Descripción" id="description">
                     </div>
                     <div class="form-group">
                     <input type="text" class="form-control" placeholder="Imagen representativa">
                     </div>
                     <div class="form-group">
                     <select class="form-control">
-                        <option>Seleccionar categoría</option>
-                        <option>Categoría 1</option>
-                        <option>Categoría 2</option>
+                        <option value="">Seleccionar categoría</option>
                     </select>
                     </div>
                     <div class="form-group">
-                    <p>¿Activar comentarios?</p>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="comentarios" id="Si" value="option1" checked>
-                        <label class="form-check-label" for="Si">
-                        Si
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="comentarios" id="No" value="option2">
-                        <label class="form-check-label" for="No">
-                        No
-                        </label>
-                    </div>
+                        <select class="form-control">
+                            <option value="true">¿Activar comentarios?</option>
+                            <option value="true">Si</option>
+                            <option value="false">No</option>
+                        </select>
                     </div>
                     <div class="row">
-                    <button class="btn btn-custom mx-auto" data-dismiss="modal">Crear entrada</button>
+                    <button class="btn btn-custom btn-custom-w mx-auto" data-dismiss="modal">Crear entrada</button>
+                    <button class="btn btn-danger btn-custom-w mx-auto" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
                 </div>

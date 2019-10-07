@@ -9,7 +9,8 @@ const userSchema = new schema({
         user_name : String,
         email : String,
         password : String,
-        user_type : String
+        user_type : String,
+        pages: Array
     }
 });
 
