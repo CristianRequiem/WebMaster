@@ -53,7 +53,6 @@ function crearUsuario(){
         password: document.getElementById('password').value,
         user_type: document.getElementById('user_type').value
     };
-    console.log("Contrasenia: " + persona.password)
     let parametros = `first_name=${persona.first_name}&last_name=${persona.last_name}&user_name=${persona.user_name}&email=${persona.email}&password="${persona.password}&user_type=${persona.user_type}`;
     $.ajax({
         url: '/admin/users/create',
@@ -61,7 +60,8 @@ function crearUsuario(){
         data: parametros,
         dataType: 'json',
         success: (res)=>{
-            if(res._id!=undefined)
+            console.log(res);
+            if(res._id != undefined)
                 anexarFilaUsuario(res);
             document.getElementById('first_name').value = ""
             document.getElementById('last_name').value = ""
@@ -92,22 +92,6 @@ function anexarFilaUsuario(res){
     </tr>
     `
 }
-
-// Función para eliminar usuario
-/*function eliminarUsuario(id){
-    $.ajax({
-        url: `/admin/users/${id}/delete`,
-        method: 'DELETE',
-        dataType: 'json',
-        success: (res)=>{
-            if(res.ok == 1)
-                $(`#${id}`).remove();
-        },
-        error: (err)=>{
-            console.error(err);
-        }
-    });
-}*/
 
 // Función para eliminar usuario
 function eliminarUsuario(id) {
@@ -348,9 +332,4 @@ function eliminarPagina(id){
             })
         }
     })
-}
-
-// Funcion para editar pagina
-function editarPagina(id){
-
 }

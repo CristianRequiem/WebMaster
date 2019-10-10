@@ -10,7 +10,6 @@ const postSchema = new schema({
     date: Date,
     content: String,
     image: String,
-    category: Array,
     activate_comentaries: Boolean
 });
 

@@ -75,7 +75,7 @@ module.exports = (app, passport) => {
     });
 
     // Crear usuario
-    app.post('/admin/users/create', IsLoggedIn, async(req, res) => {
+    app.post('/admin/users/create', IsLoggedIn, (req, res) => {
         let password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(8), null);
         let user = new User({
             "local.user_name": req.body.user_name,
@@ -85,15 +85,15 @@ module.exports = (app, passport) => {
             "local.password": password,
             "local.user_type": req.body.user_type
         });
-        let newUser = await user.save();
-        try {
-            res.send(newUser);
+        user.save()
+        .then((data)=>{
+            res.send(data);
             res.end();
-        }
-        catch(err){
-            res.send(err);
+        })
+        .catch((error)=>{
+            res.send(error);
             res.end();
-        }
+        });
     });
 
     // Eliminar usuario

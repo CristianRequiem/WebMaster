@@ -10,7 +10,8 @@ const userSchema = new schema({
         email : String,
         password : String,
         user_type : String,
-        pages: Array
+        pages: Array,
+        posts: Array
     }
 });
 
